@@ -1,0 +1,19 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+## Validate build before commit
+echo "🔨 Building project..."
+cd src
+dotnet build --configuration Release --nologo --verbosity quiet
+
+if [ $? -ne 0 ]; then
+    echo ""
+    echo "❌ Build falhou! Corrija os erros antes de commitar."
+    echo ""
+    exit 1
+fi
+
+echo "✅ Build passou com sucesso!"
+echo ""
+
+dotnet build --configuration Release

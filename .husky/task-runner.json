@@ -1,0 +1,14 @@
+{
+   "$schema": "https://alirezanet.github.io/Husky.Net/schema.json",
+   "tasks": [
+      {
+         "name": "commit-msg",
+         "command": "bash",
+         "args": [ "-c", "bash .husky/validate-commit-msg.sh ${HUSKY_ARGS}" ],
+         "windows": {
+            "command": "powershell",
+            "args": ["-File", ".husky/validate-commit-msg.ps1", "${HUSKY_ARGS}"]
+         }
+      }
+   ]
+}
