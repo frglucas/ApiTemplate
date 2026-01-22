@@ -146,17 +146,19 @@ ApiTemplate/
 
 ## 🔧 Tasks VS Code
 
-Pressione `Ctrl+Shift+B` para acessar:
+Pressione `Ctrl+Shift+B` para ver todas as tasks de build:
 
-- **build** - Build do projeto (padrão)
+- **build** - Build do projeto (padrão ⭐)
 - **watch** - Modo watch (rebuild automático)
 - **docker-debug-up** - Sobe container em modo debug
-- **docker-up** - Sobe container em produção
+- **docker-up** - Sube container em produção
 
 Outras tasks disponíveis via `Ctrl+Shift+P` → `Tasks: Run Task`:
 - **publish** - Publica o projeto
 - **docker-debug-down** - Para container debug
 - **docker-down** - Para container produção
+
+**Dica:** Use `Ctrl+Shift+B` para acesso rápido às tasks mais utilizadas!
 
 ## 🐛 Debug no Docker
 

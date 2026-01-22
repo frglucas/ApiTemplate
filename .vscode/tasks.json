@@ -11,7 +11,8 @@
         "/property:GenerateFullPaths=true",
         "/consoleloggerparameters:NoSummary"
       ],
-      "problemMatcher": "$msCompile"
+      "problemMatcher": "$msCompile",
+      "group": "build"
     },
     {
       "label": "publish",
@@ -35,7 +36,8 @@
         "--project",
         "${workspaceFolder}/src/ApiTemplate.Api/ApiTemplate.Api.csproj"
       ],
-      "problemMatcher": "$msCompile"
+      "problemMatcher": "$msCompile",
+      "group": "build"
     },
     {
       "label": "docker-debug-up",
@@ -57,7 +59,8 @@
       },
       "options": {
         "cwd": "${workspaceFolder}"
-      }
+      },
+      "group": "build"
     },
     {
       "label": "docker-debug-down",
@@ -95,7 +98,8 @@
       },
       "options": {
         "cwd": "${workspaceFolder}"
-      }
+      },
+      "group": "build"
     },
     {
       "label": "docker-down",

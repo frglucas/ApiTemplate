@@ -27,8 +27,8 @@
       "request": "attach",
       "processId": "${command:pickRemoteProcess}",
       "pipeTransport": {
-        "pipeProgram": "docker",
-        "pipeArgs": [ "exec", "-i", "apitemplate-debug" ],
+        "pipeProgram": "wsl",
+        "pipeArgs": [ "docker", "exec", "-i", "apitemplate-debug" ],
         "debuggerPath": "/vsdbg/vsdbg",
         "pipeCwd": "${workspaceFolder}",
         "quoteArgs": false
