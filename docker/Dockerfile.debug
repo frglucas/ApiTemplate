@@ -1,0 +1,19 @@
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS debug
+WORKDIR /app
+EXPOSE 5000
+EXPOSE 5001
+
+# Install debugger
+RUN apt-get update && apt-get install -y unzip && \
+    curl -sSL https://aka.ms/getvsdbgsh | /bin/sh /dev/stdin -v latest -l /vsdbg
+
+WORKDIR /src
+COPY ["src/ApiTemplate.Api/ApiTemplate.Api.csproj", "ApiTemplate.Api/"]
+RUN dotnet restore "ApiTemplate.Api/ApiTemplate.Api.csproj"
+COPY src/ApiTemplate.Api/. ApiTemplate.Api/
+
+WORKDIR "/src/ApiTemplate.Api"
+RUN dotnet build "ApiTemplate.Api.csproj" -c Debug -o /app/build
+
+WORKDIR /app/build
+ENTRYPOINT ["dotnet", "ApiTemplate.Api.dll"]

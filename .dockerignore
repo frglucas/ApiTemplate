@@ -1,0 +1,14 @@
+**/.git
+**/.gitignore
+**/.vscode
+**/.vs
+**/bin
+**/obj
+**/.husky
+**/.github
+**/node_modules
+**/.dockerignore
+**/Dockerfile*
+**/docker-compose*
+**/*.md
+LICENSE

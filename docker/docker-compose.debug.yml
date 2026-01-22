@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.debug
+    container_name: apitemplate-debug
+    ports:
+      - "5000:5000"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:5000
+    volumes:
+      - ../src/ApiTemplate.Api:/src/ApiTemplate.Api:cached
+      - ~/.nuget/packages:/root/.nuget/packages:ro
+    stdin_open: true
+    tty: true

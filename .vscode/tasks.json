@@ -36,6 +36,82 @@
         "${workspaceFolder}/src/ApiTemplate.Api/ApiTemplate.Api.csproj"
       ],
       "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "docker-debug-up",
+      "type": "shell",
+      "command": "wsl",
+      "args": [
+        "docker",
+        "compose",
+        "-f",
+        "docker/docker-compose.debug.yml",
+        "up",
+        "--build"
+      ],
+      "isBackground": true,
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+    {
+      "label": "docker-debug-down",
+      "type": "shell",
+      "command": "wsl",
+      "args": [
+        "docker",
+        "compose",
+        "-f",
+        "docker/docker-compose.debug.yml",
+        "down"
+      ],
+      "problemMatcher": [],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+    {
+      "label": "docker-up",
+      "type": "shell",
+      "command": "wsl",
+      "args": [
+        "docker",
+        "compose",
+        "-f",
+        "docker/docker-compose.yml",
+        "up",
+        "--build"
+      ],
+      "isBackground": true,
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+    {
+      "label": "docker-down",
+      "type": "shell",
+      "command": "wsl",
+      "args": [
+        "docker",
+        "compose",
+        "-f",
+        "docker/docker-compose.yml",
+        "down"
+      ],
+      "problemMatcher": [],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
     }
   ]
 }

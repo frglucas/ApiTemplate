@@ -1,7 +1,8 @@
 var builder = WebApplication.CreateBuilder(args);
 
-// Configure URLs
-builder.WebHost.UseUrls("http://localhost:5000");
+// Configure URLs - use environment variable or default to all interfaces
+var urls = Environment.GetEnvironmentVariable("ASPNETCORE_URLS") ?? "http://0.0.0.0:5000";
+builder.WebHost.UseUrls(urls);
 
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -11,18 +12,15 @@ builder.Services.AddSwaggerGen();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+app.UseSwagger(c =>
 {
-    app.UseSwagger(c =>
-    {
-        c.RouteTemplate = "api/swagger/{documentName}/swagger.json";
-    });
-    app.UseSwaggerUI(c =>
-    {
-        c.SwaggerEndpoint("/api/swagger/v1/swagger.json", "API v1");
-        c.RoutePrefix = "api/swagger";
-    });
-}
+    c.RouteTemplate = "api/swagger/{documentName}/swagger.json";
+});
+app.UseSwaggerUI(c =>
+{
+    c.SwaggerEndpoint("/api/swagger/v1/swagger.json", "API v1");
+    c.RoutePrefix = "api/swagger";
+});
 
 app.UseHttpsRedirection();
 
