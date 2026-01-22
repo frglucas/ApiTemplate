@@ -1,5 +1,8 @@
 var builder = WebApplication.CreateBuilder(args);
 
+// Configure URLs
+builder.WebHost.UseUrls("http://localhost:5000");
+
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -10,8 +13,15 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwagger(c =>
+    {
+        c.RouteTemplate = "api/swagger/{documentName}/swagger.json";
+    });
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/api/swagger/v1/swagger.json", "API v1");
+        c.RoutePrefix = "api/swagger";
+    });
 }
 
 app.UseHttpsRedirection();
