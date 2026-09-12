@@ -4,10 +4,10 @@
       {
          "name": "commit-msg",
          "command": "bash",
-         "args": [ "-c", "bash .husky/validate-commit-msg.sh ${HUSKY_ARGS}" ],
+         "args": [ "-c", "bash .husky/validate-commit-msg.sh ${args}" ],
          "windows": {
             "command": "powershell",
-            "args": ["-File", ".husky/validate-commit-msg.ps1", "${HUSKY_ARGS}"]
+            "args": ["-ExecutionPolicy", "Bypass", "-File", ".husky/validate-commit-msg.ps1", "${args}"]
          }
       }
    ]
