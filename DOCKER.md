@@ -2,6 +2,8 @@
 
 ## Rodar aplicação em modo debug no Docker
 
+As imagens Docker do projeto usam **.NET 10**.
+
 ### 1. Subir o container em modo debug:
 ```bash
 docker-compose -f docker/docker-compose.debug.yml up --build

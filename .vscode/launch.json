@@ -6,7 +6,7 @@
       "type": "coreclr",
       "request": "launch",
       "preLaunchTask": "build",
-      "program": "${workspaceFolder}/src/ApiTemplate.Api/bin/Debug/net8.0/ApiTemplate.Api.dll",
+      "program": "${workspaceFolder}/src/ApiTemplate.Api/bin/Debug/net10.0/ApiTemplate.Api.dll",
       "args": [],
       "cwd": "${workspaceFolder}/src/ApiTemplate.Api",
       "stopAtEntry": false,

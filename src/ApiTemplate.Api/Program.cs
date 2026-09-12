@@ -6,20 +6,18 @@ builder.WebHost.UseUrls(urls);
 
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddOpenApi();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-app.UseSwagger(c =>
-{
-    c.RouteTemplate = "api/swagger/{documentName}/swagger.json";
-});
+app.MapOpenApi();
 app.UseSwaggerUI(c =>
 {
-    c.SwaggerEndpoint("/api/swagger/v1/swagger.json", "API v1");
-    c.RoutePrefix = "api/swagger";
+    c.SwaggerEndpoint("/openapi/v1.json", "API v1");
+    c.RoutePrefix = "swagger";
 });
 
 app.UseHttpsRedirection();
@@ -41,8 +39,7 @@ app.MapGet("/weatherforecast", () =>
         .ToArray();
     return forecast;
 })
-.WithName("GetWeatherForecast")
-.WithOpenApi();
+.WithName("GetWeatherForecast");
 
 app.Run();
 

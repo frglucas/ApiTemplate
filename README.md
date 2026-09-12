@@ -5,8 +5,8 @@ Template para criação de Web APIs .NET com boas práticas, ferramentas de qual
 ## 🚀 Características
 
 ### ✨ Funcionalidades Principais
-- **ASP.NET Core 8.0** - Framework moderno para Web APIs
-- **Swagger/OpenAPI** - Documentação interativa da API em `/api/swagger`
+- **ASP.NET Core 10.0** - Framework moderno para Web APIs
+- **Swagger/OpenAPI** - Documentação interativa da API em `/swagger`
 - **Minimal APIs** - Endpoints limpos e performáticos
 
 ### 🔒 Qualidade de Código
@@ -34,7 +34,7 @@ Template para criação de Web APIs .NET com boas práticas, ferramentas de qual
 
 ## 📋 Pré-requisitos
 
-- [.NET 8.0 SDK](https://dotnet.microsoft.com/download)
+- [.NET 10.0 SDK](https://dotnet.microsoft.com/download)
 - [Docker Desktop](https://www.docker.com/products/docker-desktop) (opcional)
 - [Git](https://git-scm.com/)
 - [VS Code](https://code.visualstudio.com/) (recomendado)
@@ -64,7 +64,7 @@ dotnet run
 - Pressione `F5` para rodar com debug
 - Ou `Ctrl+Shift+B` e selecione a task desejada
 
-A API estará disponível em: http://localhost:5000/api/swagger
+A API estará disponível em: http://localhost:5000/swagger
 
 ### 4. Executar com Docker
 
@@ -207,4 +207,4 @@ Este projeto está sob a licença [MIT](LICENSE).
 
 ---
 
-**Feito com ❤️ usando .NET 8.0**
+**Feito com ❤️ usando .NET 10.0**
